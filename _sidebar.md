@@ -1,8 +1,10 @@
 
 
-- iOS基础笔记
-  - [1. 自动化测试（脚本打包）](/iOS笔记/自动化测试（脚本打包）.md)
-  - [2. 自动化测试（Xcode一键打包发布）](/iOS笔记/自动化测试（Xcode一键打包发布）.md)
-  - [3. 自动化测试（Test Flight）](/iOS笔记/自动化测试（Test Flight）.md)
-  - [4. 自动化测试（Jenkins+GitHub+fir-cli自动打包发布）](/iOS笔记/自动化测试（Jenkins+GitHub+fir-cli自动打包发布）.md)
+- [简介](/zh-cn/简介/简介.md)
+- [iOS](/zh-cn/iOS笔记/iOS笔记简介.md)
+- [联系我们](/zh-cn/联系我们/联系我们.md)
+
+<!-- - [Andorid](/zh-cn/Andorid笔记/Andorid笔记.md)
+- [Flutter](/zh-cn/Flutter笔记/Flutter笔记。md)
+- [ReactNative](/zh-cn/ReactNative笔记/ReactNative笔记.md) -->
   
