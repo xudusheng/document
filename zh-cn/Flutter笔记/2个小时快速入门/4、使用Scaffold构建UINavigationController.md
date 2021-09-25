@@ -34,8 +34,9 @@ class ScaffoldDemo extends StatelessWidget {
 }
 ```
 
-<!-- <img src="./images/4.1.png" width="50%"> -->
-![4.1 效果图](./images/4.1.png)![4.1 效果图](./images/4.1.png)
+<img src="https://xudusheng.github.io/document/zh-cn/Flutter笔记/2个小时快速入门/images/4.1.png" width="49%">
+
+<!-- ![4.1 效果图](/images/4.1.png)![4.1 效果图](./images/4.1.png) -->
 
 
 2、页面跳转
