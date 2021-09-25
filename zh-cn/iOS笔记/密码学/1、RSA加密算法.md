@@ -107,7 +107,7 @@
 ## 3、 RSA加密原理：
 ### 3.1 迪菲赫尔曼密钥交换
 &emsp;&emsp;原始需求：不直接用密钥进行传输，保证数据传输更加安全，交换的目的是为了获取到10这个值。  
-&emsp;&emsp;实际应用可能是为了获得对称加密的秘钥![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/base64_1.png) 
+&emsp;&emsp;实际应用可能是为了获得对称加密的秘钥![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_1.png) 
 
 ### 3.2 RSA加密原理：
 
@@ -142,9 +142,9 @@
 Mac的终端可以直接使用OpenSSL进行RSA的命令运行。 
 由于Mac系统内置OpenSSL(开源加密库),所以我们可以直接在终端上使用命令来玩RSA. OpenSSL中RSA算法常用指令主要有三个： 
 
-<!-- ![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/base64_2.png)  -->
+![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png) 
 <!-- <img src="https://xudusheng.github.io/document/zh-cn/Flutter笔记/2个小时快速入门/images/4.1.png" width="49%"> -->
-<img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/base64_2.png">
+<!-- <img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png" width="49%"> -->
 
 ### 4.1 生成RSA私钥(密钥长度为1024bit)
 ```Shell
@@ -190,7 +190,7 @@ fUudR4UuV5CA/ikN5wIDAQAB
 ```
 
 **4.1、4.2生成以下两个文件**
-![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/base64_2.png) 
+![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png) 
 
 ### 4.3 将私钥转换成为明文
 ```Shell
