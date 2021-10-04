@@ -1,3 +1,6 @@
+```math
+E = mc^2
+```
 &emsp;&emsp;`密码学`是指研究信息加密，破解密码的技术科学。密码学的起源可追溯到2000年前。而当今的密码学是以数学为基础的。   
 &emsp;&emsp;`密码学`的历史大致可以追溯到两千年前，相传古罗马名将凯撒大帝为了防止敌方截获情报，用密码传送情报。凯撒的做法很简单，就是对二十几个罗马字母建立一张对应表。这样，如果不知道密码本，即使截获一段信息也看不懂。从凯撒大帝时代到上世纪70年代这段很长的时间里，密码学的发展非常的缓慢，因为设计者基本上靠经验，没有运用数学原理。   
 - **在1976年以前**，所有的加密方法都是同一种模式：**加密、解密使用同一种算法**。在交互数据的时候，彼此通信的双方就必须将规则告诉对方，否则没法解密。那么加密和解密的规则（简称密钥），它保护就显得尤其重要。传递密钥就成为了最大的隐患。这种加密方式被成为`对称加密算法`（symmetric encryption algorithm）  
@@ -107,11 +110,11 @@
 ## 3、 RSA加密原理：
 ### 3.1 迪菲赫尔曼密钥交换
 &emsp;&emsp;原始需求：不直接用密钥进行传输，保证数据传输更加安全，交换的目的是为了获取到10这个值。  
-&emsp;&emsp;实际应用可能是为了获得对称加密的秘钥![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_1.png) 
+&emsp;&emsp;实际应用可能是为了获得对称加密的秘钥![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rsa_1.png) 
 
 ### 3.2 RSA加密原理：
 
-1、$m^{e}\%\ n = c$  -->加密
+1、$m^{e}\%\ n = c$  -->加密  
 2、$c^d\% n = (m^e\%n)^d \%\ n =m^{e*d} \%\ n =m$  -->解密
 > - 加密公式：$m^{e} \%\ n = c$
 > - 解密公式：$c^{d} \%\ n = m$
@@ -124,6 +127,22 @@
 > - 2、由于需要求出φ(n)，所以根据欧拉函数是特点，最简单的方式n由两个质数相乘得到: 质数：p1、p2 
 > Φ(n) = (p1 -1) * (p2 - 1) 
 > - 3、最终由φ(n)得到e 和 d 。 总共生成6个数字：p1、p2、n、φ(n)、e、d
+
+下面我们来演示一下rsa加密解密的整个过程。为了方便演示，p1，p2，n的取比较小的值
+> 1、计算 p1、p2、n、φ(n)、e、d 的值，具体步骤如下：
+> - 1. p1 = 3；p2 = 11; n = p1 * p2 = 33;  
+> - 2. 求φ(n)：φ(n) = φ(p1) * φ(p2) = φ(3) * φ(11)  = 2 * 10 = 20；  
+> - 3. 已知φ(n) = 20，根据`e*d = φ(n)*k + 1`, 若k = 1，则，e = 3， d = 7；
+> - 计算结果：p1 = 3；p2 = 11; n = 33; φ(n) = 20；e = 3， d = 7；
+> 
+> 2、对明文 m = 6 进行加密
+> - 1. 代入加密公式进行加密：$m^{e} \%\ n = c$
+> - 2. 密文 $c = m^{e} \%\ n = 6^{3} \%\ 33 = 18$
+> 
+> 3、对密文 c = 18 进行解密
+> - 1. 代入解密公式进行解密：$c^{d} \%\ n = m$
+> - 2. 明文 $m = c^{d} \%\ n = 18^{7} \%\ 33 = 6$
+
 
 ### 3.3 关于RSA的安全
 
@@ -142,9 +161,8 @@
 Mac的终端可以直接使用OpenSSL进行RSA的命令运行。 
 由于Mac系统内置OpenSSL(开源加密库),所以我们可以直接在终端上使用命令来玩RSA. OpenSSL中RSA算法常用指令主要有三个： 
 
-![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png) 
-<!-- <img src="https://xudusheng.github.io/document/zh-cn/Flutter笔记/2个小时快速入门/images/4.1.png" width="49%"> -->
-<!-- <img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png" width="49%"> -->
+![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rsa_2.png) 
+<!-- <img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rsa_2.png" width="49%"> -->
 
 ### 4.1 生成RSA私钥(密钥长度为1024bit)
 ```Shell
@@ -190,7 +208,7 @@ fUudR4UuV5CA/ikN5wIDAQAB
 ```
 
 **4.1、4.2生成以下两个文件**
-![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rac_2.png) 
+![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/rsa_2.png) 
 
 ### 4.3 将私钥转换成为明文
 ```Shell
