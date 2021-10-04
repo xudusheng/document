@@ -30,17 +30,17 @@ MD5 (DSC_5572.JPG) = 83f54f3744fb47b71b6bde03ce2028bf
 ![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/hash_1.jpg) 
 &emsp;&emsp;但是，如果仅仅使用Hash算法对用户密码进行加密，依然无法无法保证用户密码的安全，详见[用户密码安全防护](https://)
 
-### 搜索引擎
+### 3.2 搜索引擎
 
 &emsp;&emsp;简单说一下搜索引擎与Hash的关系.  
 &emsp;&emsp;比如百度搜`大爷 吃饭 妹子` 和`吃饭 妹子 大爷` 这三个关键词。出现的结果如果没有`大爷 吃饭 妹子`直接关联的内容，那么搜索结果是一样的。  
 &emsp;&emsp;因为搜索时引擎会拆词，关键字会被拆成`大爷`、`吃饭`和`妹子`这三个词，然后得到三个词的Hash值，然后在对位相加。无论顺序是怎么样的，对位相加后的结果都一样！所以不论顺序怎么边，搜索结果都是一样的。
 
-### 3.2 数据校验
+### 3.3 数据校验
 &emsp;&emsp;在讲Hash加密的特点的部分提到，Hash加密可以用来做`数据识别`。 
-#### 3.2.1 版权校验 
+#### 3.3.1 版权校验 
 &emsp;&emsp;当你用拍了一段视频，并成功上传到某视频网站，此时**视频网站就会记录下这段视频的Hash值，并认定这段视频的版权归属于你**。别人如果上传了相同的视频，则会提示该视频已存在等类似的提示。
-#### 3.2.2 大文件重复校验
+#### 3.3.2 大文件重复校验
 &emsp;&emsp;同样的，在上传文件到云盘时，服务器会记录下这个文件的Hash值，如果别人上传相同的文件，**服务器会先取这份文件的Hash值与现存文件的Hash进行比对**，如果匹配到，说明服务器上有相同的数据，服务器只要在你的账号里加了一条数据，而无需重新上传这份文件。所以会感觉`秒传`。
 下面我们来看看几种文件操作是否会改变Hash值。
 
@@ -58,7 +58,7 @@ MD5 (DSC_5572.JPG) = 83f54f3744fb47b71b6bde03ce2028bf
 <img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/hash_3_7.jpg" width="49%">
 <img src="https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/hash_3_8.png" width="49%">
 
-### 3.3 数字签名
+### 3.4 数字签名
 &emsp;&emsp;客户端在向想服务器发起请求的过程中，黑客完全有机会**拦截请求并篡改数据**之后重新发起请求，造成数据安全隐藏。这就需要对网络请求的进行数据签名。
 1、对数据做Hash加密；  
 2、对Hash值进行RSA加密；  
@@ -68,12 +68,11 @@ MD5 (DSC_5572.JPG) = 83f54f3744fb47b71b6bde03ce2028bf
 我们把用RSA包装Hash值的数据称为`数字签名`。
 ![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/hash_3_9.jpg) 
 
-### 3.4 其他
+### 3.5 其他
 - 负载均衡
 - 服务器缩容
 - 服务器扩容
-- 虚拟节点
-来源：https://www.zhihu.com/question/26762707
+- 虚拟节点  
 
 
 ## 4、Hash加密的安全与防护
@@ -87,7 +86,8 @@ MD5 (DSC_5572.JPG) = 83f54f3744fb47b71b6bde03ce2028bf
 ```
 ![image](https://xudusheng.github.io/document/zh-cn/iOS笔记/密码学/images/hash_4_1.jpg) 
 
-## 5、Hmac加密方案
 
+## 参考资料:  
+[《什么是Hash》](https://www.zhihu.com/question/26762707)
 
 
